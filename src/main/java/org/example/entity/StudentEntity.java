@@ -2,16 +2,14 @@ package org.example.entity;
 
 import org.example.enums.StudentRole;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "student")
 public class StudentEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     @Column(name = "name")
     private String name;
@@ -92,17 +90,5 @@ public class StudentEntity {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "StudentEntity{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", phone='" + phone + '\'' +
-                ", visible=" + visible +
-                ", created_date=" + created_date +
-                ", role='" + role + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
+
 }

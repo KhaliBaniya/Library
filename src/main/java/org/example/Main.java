@@ -4,6 +4,8 @@ package org.example;
 
 
 import org.example.dto.Student;
+import org.example.entity.BookEntity;
+import org.example.entity.StudentBookEntity;
 import org.example.entity.StudentEntity;
 import org.example.enums.StudentRole;
 import org.example.repository.StudentRepository;
@@ -15,7 +17,9 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import java.text.DateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,19 +44,46 @@ public class Main {
 //
 
         //name,surname,phone,created_date,visible,role,password
-        StudentEntity student = new StudentEntity();
-        student.setName("Aziz");
-        student.setSurname("Azizov");
-        student.setPhone("555");
-        student.setVisible(true);
-        student.setCreated_date(LocalDateTime.now());
-        student.setRole("Admin");
-        student.setPassword("555");
+//        StudentEntity student = new StudentEntity();
+//        student.setName("Aziz");
+//        student.setSurname("Azizov");
+//        student.setPhone("555");
+//        student.setVisible(true);
+//        student.setCreated_date(LocalDateTime.now());
+//        student.setRole("Admin");
+//        student.setPassword("555");
+//
+//        session.save(student);
+//        transaction.commit();
+//
+//        factory.close();
+//        session.close();
 
-        session.save(student);
+//        BookEntity book = new BookEntity();
+//        book.setTitle("O''tgan kunlar");
+//        book.setAuthor("O''tkir Xoshimov");
+//        book.setAmount(12);
+//        book.setVisible(true);
+//
+//        session.save(book);
+//        transaction.commit();
+//
+//        factory.close();
+//        session.close();
+
+
+        StudentBookEntity studentBook = new StudentBookEntity();
+
+        studentBook.setStudent_id(1);
+        studentBook.setBook_id(1);
+        studentBook.setCreated_date(LocalDateTime.now());
+
+
+        session.save(studentBook);
         transaction.commit();
 
         factory.close();
         session.close();
+
     }
 }

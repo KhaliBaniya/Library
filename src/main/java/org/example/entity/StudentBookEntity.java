@@ -2,10 +2,7 @@ package org.example.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -14,6 +11,8 @@ import java.util.Date;
 public class StudentBookEntity {
     /*StudentBook (id,student_id,book_id,createdDate,status(TAKEN,RETURNED),returnedDate,duration)*/
    @Id
+   @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
    private Integer id;
    @Column(name = "student_id")
    private Integer student_id;

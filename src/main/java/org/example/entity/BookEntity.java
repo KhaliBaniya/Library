@@ -2,10 +2,7 @@ package org.example.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -13,6 +10,8 @@ import java.util.Date;
 public class BookEntity {
     /*Book (id,title,author, publishYear, amount, visible)   (amount - shu kitobdan nechta borligi)*/
      @Id
+     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
      private Integer id;
      private String title;
      private String author;
