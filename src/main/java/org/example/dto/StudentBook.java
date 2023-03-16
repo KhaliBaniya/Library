@@ -15,7 +15,7 @@ public class StudentBook {
    private Integer id;
    private Integer student_id;
    private Integer book_id;
-   private LocalDateTime  createdDate;
-   private Date returnedDate ;
+   private LocalDateTime  created_date;
+   private Date returned_date ;
    private Date duration;
 }

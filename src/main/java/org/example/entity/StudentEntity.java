@@ -1,24 +1,31 @@
-package org.example.dto;
+package org.example.entity;
 
-import lombok.*;
 import org.example.enums.StudentRole;
 
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 
-
-
-
-public class Student {
-    /* Student (id, name, surname,phone, createdDate, visible) */
+@Entity
+@Table(name = "student")
+public class StudentEntity {
+    @Id
     private Integer id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "surname")
     private String surname;
+    @Column(name = "phone")
     private String phone;
+    @Column(name = "visible")
     private Boolean visible;
+    @Column(name = "created_date")
     private LocalDateTime created_date;
-    private StudentRole role;
-   // private GeneralStatus status;
+    @Column(name = "role")
+    private String role;
+    @Column(name = "password")
     private String password;
 
     public Integer getId() {
@@ -69,11 +76,11 @@ public class Student {
         this.created_date = created_date;
     }
 
-    public StudentRole getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(StudentRole role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
@@ -87,14 +94,14 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "StudentEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", phone='" + phone + '\'' +
                 ", visible=" + visible +
                 ", created_date=" + created_date +
-                ", role=" + role +
+                ", role='" + role + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
