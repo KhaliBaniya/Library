@@ -16,9 +16,6 @@ public class StudentRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-
-
-
     public List<Student> getStudentByPhoneAndPassword2(String phone, String password) {
         String sql = "select * from lesson where phone = ? and password = ? ";
         List<Student> list = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Student.class), phone,password);

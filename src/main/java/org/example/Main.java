@@ -71,19 +71,19 @@ public class Main {
 //        factory.close();
 //        session.close();
 
-
-        StudentBookEntity studentBook = new StudentBookEntity();
-
-        studentBook.setStudent_id(1);
-        studentBook.setBook_id(1);
-        studentBook.setCreated_date(LocalDateTime.now());
-
-
-        session.save(studentBook);
-        transaction.commit();
-
-        factory.close();
-        session.close();
+//
+//        StudentBookEntity studentBook = new StudentBookEntity();
+//
+//        studentBook.setStudent_id(1);
+//        studentBook.setBook_id(1);
+//        studentBook.setCreated_date(LocalDateTime.now());
+//
+//
+//        session.save(studentBook);
+//        transaction.commit();
+//
+//        factory.close();
+//        session.close();
 
     }
 }
